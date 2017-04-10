@@ -3,5 +3,5 @@ project(calc)
 
 set(CMAKE_C_STANDARD 11)
 
-set(SOURCE_FILES main.c calc.c calc.h parse.c parse.h)
+set(SOURCE_FILES main.c add.c add.h parse.c parse.h calc.c calc.h)
 add_executable(calc ${SOURCE_FILES})

@@ -1,10 +1,6 @@
 #ifndef CALC_CALC_H
 #define CALC_CALC_H
 
-char *add(char *, char *);
+char *calc(char *expr);
 
-#endif
-
-
-
-
+#endif //CALC_CALC_H
