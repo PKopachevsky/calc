@@ -4,7 +4,7 @@
 
 char *calc(char *input) {
     char *operands[20];
-    char *operand, *op1, *op2, *result;
+    char *operand, *op1, *op2;
 
     char op = 0, ocp = 0, op_len = 0;
 
@@ -34,10 +34,10 @@ char *calc(char *input) {
         if (c != ' ') {
             op1 = operands[--op];
             op2 = operands[--op];
+            op++;
             switch (c) {
                 case '+':
-                    result = add(op1, op2);
-                    operands[op++] = result;
+                    add(op2, op1);
                     break;
             }
 

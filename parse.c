@@ -2,14 +2,15 @@
 
 #define MAX_LENGTH 100
 
-int getPriority(char c);
+char getPriority(char c);
 
 void parse(char *expr, char *output) {
     char stack[MAX_LENGTH];
 
     char i=0, sp = 0, op = 0;
 
-    char c, st, prior, digit = 0;
+    char c, st, prior, dp = 0;
+    char *digit;
 
     while((c = expr[i++]) != '\0') {
         if (c >= '0' && c <= '9') {
@@ -19,7 +20,6 @@ void parse(char *expr, char *output) {
             if(digit) {
                 output[op++] = ' ';
             }
-            prior = 0;
             switch(c) {
                 case '*':
                 case '/':
@@ -55,7 +55,7 @@ void parse(char *expr, char *output) {
     output[op] = '\0';
 }
 
-int getPriority(char c) {
+char getPriority(char c) {
     switch(c) {
         case '*':
         case '/':
