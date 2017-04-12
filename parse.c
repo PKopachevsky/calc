@@ -14,10 +14,12 @@ void parse(char *expr, char *output) {
 
     while((c = expr[i++]) != '\0') {
         if (c >= '0' && c <= '9') {
-            output[op++] = c;
-            digit = 1;
+            digit[dp++] = c;
         } else {
-            if(digit) {
+            if(dp > 0) {
+                while(dp > 0) {
+                    output[op++] = digit[--dp];
+                }
                 output[op++] = ' ';
             }
             switch(c) {
@@ -48,6 +50,10 @@ void parse(char *expr, char *output) {
             }
         }
     }
+    while(dp > 0) {
+        output[op++] = digit[--dp];
+    }
+    output[op++] = ' ';
     while (sp > 0) {
         output[op++] = stack[--sp];
         output[op++] = ' ';
