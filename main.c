@@ -4,8 +4,8 @@
 #include "reverse.h"
 
 void main() {
-    char input[100] = "1234 + 1111";
-    char expr[100];
+    char input[256] = "1234567876543212345678764 + 1111111111111111111111111";
+    char expr[256];
     parse(input, expr);
 
     char *result = calc(expr);
@@ -13,6 +13,6 @@ void main() {
 
     char c, i = 0;
     while((c = result[i++]) != '\0') {
-        putchar(c);
+        printf("%c", c);
     }
 }

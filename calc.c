@@ -1,4 +1,3 @@
-#include "calc.h"
 #include "add.h"
 #include "alloc.h"
 
@@ -11,7 +10,6 @@ char *calc(char *input) {
     char c;
     int i = 0;
 
-    printf("%s\n", input);
     do {
         c = input[i++];
         while (c >= '0' && c <= '9') {
