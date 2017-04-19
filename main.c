@@ -3,11 +3,8 @@
 #include "calc.h"
 #include "reverse.h"
 
-void main() {
-    char input[256] = "1234567876543212345678764 + 1111111111111111111111111";
-    char expr[256];
-    parse(input, expr);
-
+void main(int argc, char *argv[] ) {
+    char *expr = parse(argv[1]);
     char *result = calc(expr);
     reverse(result);
 

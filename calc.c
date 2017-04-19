@@ -1,4 +1,5 @@
 #include "add.h"
+#include "mult.h"
 #include "alloc.h"
 
 char *calc(char *input) {
@@ -36,6 +37,9 @@ char *calc(char *input) {
             switch (c) {
                 case '+':
                     add(op2, op1);
+                    break;
+                case '*':
+                    mult(op2, op1);
                     break;
             }
 

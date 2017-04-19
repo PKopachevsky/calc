@@ -4,7 +4,8 @@
 
 char getPriority(char c);
 
-void parse(char *expr, char *output) {
+char *parse(char *expr) {
+    char *output = alloc(256);
     char stack[MAX_LENGTH];
 
     char i=0, sp = 0, op = 0;
@@ -62,6 +63,8 @@ void parse(char *expr, char *output) {
         output[op++] = ' ';
     }
     output[op] = '\0';
+
+    return output;
 }
 
 char getPriority(char c) {
