@@ -6,7 +6,6 @@
 #endif
 
 void add(char *op1, char *op2){
-    char i = 0;
     char len1 = 0, len2 = 0;
     char c1 = 0, c2 = 0;
     while((c1 = op1[len1]) != '\0' || (c2 = op2[len2]) != '\0') {
@@ -18,6 +17,7 @@ void add(char *op1, char *op2){
         }
     }
 
+    char i = 0;
     char summ, r = 0;
     while (i < len1 || i < len2) {
         c1 = (char) ((i < len1) ? op1[i] : '0');
