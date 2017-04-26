@@ -32,14 +32,14 @@ char *calc(char *input) {
         }
         if (c != ' ') {
             op1 = operands[--op];
-            op2 = operands[--op];
+            op2 = operands[op - 1];
             switch (c) {
                 case '+':
                     add(op2, op1);
                     op++;
                     break;
                 case '*':
-                    operands[op++] = mult(op2, op1);
+                    mult(op2, op1);
                     break;
             }
 

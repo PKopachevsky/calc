@@ -6,7 +6,7 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
-char *mult(char *op1, char *op2) {
+void mult(char *op1, char *op2) {
     char *result = alloc(256);
     char *prod = alloc(256);
     char c1, c2, v, r;
@@ -18,7 +18,7 @@ char *mult(char *op1, char *op2) {
         i2 = 0;
         r = 0;
         pp = 0;
-        for(char j = 1; j < i1; j++ ){
+        for (char j = 1; j < i1; j++) {
             prod[pp++] = '0';
         }
         while ((c2 = op2[i2++]) != '\0') {
@@ -31,12 +31,15 @@ char *mult(char *op1, char *op2) {
                 r = 0;
             };
         }
-        if(r > 0) {
+        if (r > 0) {
             prod[pp++] = '0' + r;
             prod[pp] = '\0';
         }
         add(result, prod);
     }
 
-    return result;
+    i1 = 0;
+    do {
+        op1[i1] = (c1 = result[i1++]);
+    } while (c1 != '\0');
 }
