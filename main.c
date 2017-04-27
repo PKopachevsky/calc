@@ -1,15 +1,23 @@
 #include <stdio.h>
-#include "parse.h"
+#include <memory.h>
 #include "calc.h"
 #include "reverse.h"
+#include "alloc.h"
+#include "parse.h"
 
-void main(int argc, char *argv[] ) {
-    char *expr = parse(argv[1]);
-    char *result = calc(expr);
-    reverse(result);
+#define EXIT "exit"
 
-    char c, i = 0;
-    while((c = result[i++]) != '\0') {
-        printf("%c", c);
+void main(int argc, char *argv[]) {
+    char *input = alloc(256);;
+    if (argc < 2) {
+        scanf("%[^\n]%*c", input);
+    } else {
+        strcpy(input, argv[1]);
+    };
+    while (strcmp(input, EXIT)) {
+        char *result = calc(parse(input));
+        reverse(result);
+        printf("%s\n", result);
+        scanf("%[^\n]%*c", input);
     }
 }

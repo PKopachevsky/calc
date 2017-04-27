@@ -1,14 +1,13 @@
-#include "stdio.h"
 #include "add.h"
 
 #ifndef max
-#define max(a,b) ((a) > (b) ? (a) : (b))
+#define max(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
-void add(char *op1, char *op2){
+void add(char *op1, char *op2) {
     char len1 = 0, len2 = 0;
     char c1 = 0, c2 = 0;
-    while((c1 = op1[len1]) != '\0' || (c2 = op2[len2]) != '\0') {
+    while ((c1 = op1[len1]) != '\0' || (c2 = op2[len2]) != '\0') {
         if (c1 != '\0') {
             len1++;
         }
@@ -26,10 +25,14 @@ void add(char *op1, char *op2){
         if (summ > '9') {
             r = 1;
             summ -= 10;
-        } else{
+        } else {
             r = 0;
         };
         op1[i++] = summ;
+    }
+    if (r > 0) {
+        op1[i++] = (char) ('0' + r);
+        op1[i] = '\0';
     }
     return;
 }

@@ -16,7 +16,7 @@ char *parse(char *expr) {
     while((c = expr[i++]) != '\0') {
         if (c >= '0' && c <= '9') {
             if(dp == 0) {
-                digit = alloc(50);
+                digit = alloc(256);
             }
             digit[dp++] = c;
         } else {
