@@ -1,6 +1,6 @@
-#include "add.h"
-#include "mult.h"
-#include "alloc.h"
+#include "math/add.h"
+#include "math/mult.h"
+#include "utils/alloc.h"
 
 char *calc(char *input) {
     char *operands[20];

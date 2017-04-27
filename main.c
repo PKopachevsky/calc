@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <memory.h>
 #include "calc.h"
-#include "reverse.h"
-#include "alloc.h"
-#include "parse.h"
+#include "utils/reverse.h"
+#include "utils/alloc.h"
+#include "utils/parse.h"
 
 #define EXIT "exit"
 

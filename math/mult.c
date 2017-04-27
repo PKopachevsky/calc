@@ -1,6 +1,6 @@
 #include "mult.h"
 #include "add.h"
-#include "alloc.h"
+#include "../utils/alloc.h"
 
 #ifndef max
 #define max(a, b) ((a) > (b) ? (a) : (b))
